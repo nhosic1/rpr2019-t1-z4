@@ -34,4 +34,11 @@ public class Artikl {
     public void setKod(String kod) {
         this.kod = kod;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Artikl)) return false;
+        Artikl a = (Artikl)o;
+        return  (naziv.equals(a.getNaziv()) && cijena == a.getCijena() && kod.equals(a.getKod()));
+    }
 }
